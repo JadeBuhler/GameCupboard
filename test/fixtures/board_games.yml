@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  MinPlayers: 1
+  MaxPlayers: 1
+  PlayTime: MyString
+  Price: 9.99
+
+two:
+  Name: MyString
+  MinPlayers: 1
+  MaxPlayers: 1
+  PlayTime: MyString
+  Price: 9.99
