@@ -60,3 +60,6 @@ gem 'activeadmin', github: 'activeadmin'
 
 # Devise provides flexible user authentication
 gem 'devise', '~> 4.3'
+
+# Rubocop (Stop! in the name of the law!)
+gem 'rubocop', require: false
