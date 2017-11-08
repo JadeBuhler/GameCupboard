@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-    belongs_to :board_game
+    has_many :board_games
+    validates :name, presence: true
 end

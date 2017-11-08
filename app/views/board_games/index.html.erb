@@ -1,0 +1,10 @@
+<%= render 'partials/header' %>
+<div id="game_list">
+    <h1>Games:</h1>
+    <% @games.each do |game| %>
+        <div class="board_game">
+            <%= game.name %>
+        </div>
+    <% end %>
+
+</div>

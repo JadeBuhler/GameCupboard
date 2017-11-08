@@ -1,6 +1,6 @@
 class BoardGame < ApplicationRecord
     has_many :expansions
-    has_many :categories
+    belongs_to :category, optional: true
     validates :name, :min_players, :max_players, :play_time, :price, :image, presence: true
     validates :price, numericality: true
 end
