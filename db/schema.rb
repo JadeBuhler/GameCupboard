@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108011425) do
+ActiveRecord::Schema.define(version: 20171108145614) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(version: 20171108011425) do
     t.datetime "updated_at", null: false
     t.integer "board_game_id"
     t.index ["board_game_id"], name: "index_expansions_on_board_game_id"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
