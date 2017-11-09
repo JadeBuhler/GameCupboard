@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
-    belongs_to :user, optional: true
-    validates :price, presence: true
+    has_many :line_items
+    belongs_to :user
+    validates :price, :status, presence: true
     validates :price, numericality: true
 end

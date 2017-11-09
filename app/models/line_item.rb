@@ -1,4 +1,5 @@
 class LineItem < ApplicationRecord
-    # validates :quantity, :price presence: true
-    # validates :quantity, :price numericality: true
+    belongs_to :order
+    validates :price, :quantity, presence: true
+    validates :price, :quantity, numericality: true
 end

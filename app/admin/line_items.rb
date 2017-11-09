@@ -1,5 +1,5 @@
 ActiveAdmin.register LineItem do
     #White list the necessary params of a line item
-    permit_params :quantity, :price
+    permit_params :price, :quantity, :order_id
 
 end
