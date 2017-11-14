@@ -54,15 +54,16 @@ section {
 }
 
 #filter {
-	width:100%;
+	width:90%;
 	text-align:right;
 }
 
 #game_container {
 	display:flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 	width:100%;
-	margin:0 auto;
+	margin-left:1%;
 }
 
 .board_game {
@@ -70,6 +71,8 @@ section {
 	height:20%;
 	text-align:center;
 	border: solid 2px rgb(161, 161, 161);
+	margin:.5%;
+	padding:1%;
 
 	img {
 		width:150px;

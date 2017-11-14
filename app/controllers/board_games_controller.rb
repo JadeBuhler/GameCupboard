@@ -3,7 +3,7 @@ class BoardGamesController < ApplicationController
         @games = BoardGame.all
     end
 
-    def filterByNew
-        @games = BoardGame.where(status: 'New')
+    def show
+        @game = BoardGame.find(params[:id])
     end
 end

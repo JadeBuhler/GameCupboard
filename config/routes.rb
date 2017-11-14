@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'pages/index'
   get '/products', to: 'board_games#index', as: 'products'
+  get '/products/:id', to: 'board_games#show', as: 'product', id: /\d+/
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
 

@@ -1,0 +1,11 @@
+<%= render 'partials/header' %>
+<div class="board_game">
+    <h1><%= @game.name%></h1>
+    <h2>Category: <%= @game.category.name%></h2>
+    <h2>Players: <%= @game.min_players%> - <%= @game.max_players%></h2>
+    <h2>Price: $<%=@game.price%></h2>
+    <h2>Play time: <%= @game.play_time%></h2>
+    <p><%= image_tag @game.image%></p>
+    <p><%= @game.description%></p>
+    <%= link_to 'Back', products_path %>
+</div>
