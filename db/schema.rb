@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109185250) do
+ActiveRecord::Schema.define(version: 20171114015803) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20171109185250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.text "description"
+    t.string "status"
     t.index ["category_id"], name: "index_board_games_on_category_id"
   end
 
@@ -69,6 +71,8 @@ ActiveRecord::Schema.define(version: 20171109185250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "board_game_id"
+    t.text "description"
+    t.string "status"
     t.index ["board_game_id"], name: "index_expansions_on_board_game_id"
   end
 
@@ -88,6 +92,15 @@ ActiveRecord::Schema.define(version: 20171109185250) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.decimal "gst"
+    t.decimal "pst"
+    t.decimal "hst"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

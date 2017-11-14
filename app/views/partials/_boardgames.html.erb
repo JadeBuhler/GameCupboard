@@ -1,0 +1,6 @@
+<% @games.each do |game| %>
+    <h1><%= game.name%></h1>
+    <h2><%= game.min_players%> - <%=game.max_players%> Players</h2>
+    <h2><%= game.play_time%></h2>
+    <p><%= image_tag game.image%></p>
+<% end %>
