@@ -93,13 +93,5 @@ nav {
         &:hover {
 
         }
-
-        &:after {
-            content:"|";
-        }
-
-        &:last-of-type {
-            content:" ";
-        }
     }
 }

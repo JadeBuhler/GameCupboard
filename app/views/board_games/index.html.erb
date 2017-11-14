@@ -1,2 +1,12 @@
 <%= render 'partials/header' %>
-<%= render 'partials/boardgames' %>
+<section>
+    <div id="filter">
+        <h3>Filter By:</h3>
+        <select>
+            <option value="New">None</option>
+            <option value="New">New</option>
+            <option value="New">On Sale</option>
+        </select>
+    </div>
+    <%= render 'partials/boardgames' %>
+</section>
