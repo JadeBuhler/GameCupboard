@@ -78,8 +78,15 @@ table {
 		padding:.5%;
 
 		img {
-			width:200px;
-			height:200px;
+			width:175px;
+			height:175px;
 		}
 	}
+}
+
+.pagination {
+	width:95%;
+	display:flex;
+    justify-content:center;
+	float:none !important;
 }

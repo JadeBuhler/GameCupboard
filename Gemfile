@@ -66,3 +66,6 @@ gem 'rubocop', require: false
 
 # Paperclip image uploader.
 gem 'paperclip'
+
+# Pagination. One nation, under code.
+gem 'kaminari'

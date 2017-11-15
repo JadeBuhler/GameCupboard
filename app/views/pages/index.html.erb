@@ -8,4 +8,11 @@
             <p><%= image_tag game.image%></p>
         </div>
     <% end %>
+
+    <% @expansions.each do |exp| %>
+        <div class="expansion">
+            <h1><%= exp.name%></h1>
+            <p><%= image_tag exp.image%></p>
+        </div>
+    <% end %>
 </div>
