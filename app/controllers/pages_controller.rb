@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
     def index
-        @bgames = BoardGame.all
+        @bgames = BoardGame.last(5)
+        @expansions = Expansion.last(5)
     end
 
     def about

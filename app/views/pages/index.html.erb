@@ -1,8 +1,11 @@
 <%= render partial: 'partials/header' %>
 <h1>Our newest games:</h1>
 
-<% @bgames.each do |game| %>
-    <div class="board_game">
-        <%= game.name %>
-    </div>
-<% end %>
+<div class="game_container">
+    <% @bgames.each do |game| %>
+        <div class="board_game">
+            <h1><%= game.name %></h1>
+            <p><%= image_tag game.image%></p>
+        </div>
+    <% end %>
+</div>

@@ -63,3 +63,6 @@ gem 'devise', '~> 4.3'
 
 # Rubocop (Stop! in the name of the law!)
 gem 'rubocop', require: false
+
+# Paperclip image uploader.
+gem 'paperclip'

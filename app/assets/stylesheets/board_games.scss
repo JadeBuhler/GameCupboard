@@ -47,35 +47,39 @@ table {
 }
 /* End of CSS Reset */
 
-section {
-	width:100%;
-	margin-right:-2% !important;
-
-}
-
 #filter {
-	width:90%;
-	text-align:right;
+	width:95%;
+	margin-left:7%;
+	margin-top:.5%;
+
+	h3 {
+		display:inline;
+		font-weight:bold;
+	}
+
+	select {
+		margin-right:1%;
+	}
 }
 
-#game_container {
+.game_container {
 	display:flex;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-wrap: wrap;
 	width:100%;
 	margin-left:1%;
-}
 
-.board_game {
-	width:20%;
-	height:20%;
-	text-align:center;
-	border: solid 2px rgb(161, 161, 161);
-	margin:.5%;
-	padding:1%;
+	.board_game {
+		width:20%;
+		height:20%;
+		text-align:center;
+		border: solid 2px rgb(161, 161, 161);
+		margin:.5%;
+		padding:.5%;
 
-	img {
-		width:150px;
-		height:150px;
+		img {
+			width:200px;
+			height:200px;
+		}
 	}
 }
