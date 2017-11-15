@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114195159) do
+ActiveRecord::Schema.define(version: 20171115144351) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -77,6 +77,10 @@ ActiveRecord::Schema.define(version: 20171114195159) do
     t.integer "board_game_id"
     t.text "description"
     t.string "status"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["board_game_id"], name: "index_expansions_on_board_game_id"
   end
 

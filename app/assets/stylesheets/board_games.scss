@@ -62,14 +62,14 @@ table {
 	}
 }
 
-.game_container {
+.game_container, .expansion_container {
 	display:flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	width:100%;
 	margin-left:1%;
 
-	.board_game {
+	.board_game, .expansion {
 		width:20%;
 		height:20%;
 		text-align:center;
@@ -77,9 +77,13 @@ table {
 		margin:.5%;
 		padding:.5%;
 
+		h1 {
+			display:inline-block;
+		}
+
 		img {
-			width:175px;
 			height:175px;
+			width:175px;
 		}
 	}
 }

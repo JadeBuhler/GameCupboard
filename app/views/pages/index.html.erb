@@ -6,9 +6,13 @@
         <div class="board_game">
             <h1><%= game.name %></h1>
             <p><%= image_tag game.image%></p>
+            <%= link_to 'View Details', product_path(game) %>
         </div>
     <% end %>
+</div>
 
+<div class="expansion_container">
+    <h1>Our newest expansions:</h1>
     <% @expansions.each do |exp| %>
         <div class="expansion">
             <h1><%= exp.name%></h1>
