@@ -6,7 +6,7 @@
             <option value="Alphabetically">Alphabetically</option>
             <option value="Newest">Newest</option>
             <option value="Oldest">Oldest</option>
-            <option value="Lowest Price">Lowest Price</option>
+            <option value="Lowest Price">Lowest Price/option>
             <option value="Highest Price">Highest Price</option>
         </select>
         <h3>Filter By:</h3>
@@ -15,10 +15,13 @@
             <option value="New">New</option>
             <option value="New">On Sale</option>
         </select> -->
+        <%= render 'partials/categoryFilter' %>
+        <%= render 'partials/search'%>
     </div>
 
-    <%= render 'partials/categoryFilter' %>
-    <%= render 'partials/search'%>
-    <%= render 'partials/boardgames' %>
-    <%= paginate @games %>
+    <% if @games.size.zero? %>
+        <p>No Results Found.</p>
+    <%else%>
+        <%= render 'partials/boardgames' %>
+    <%end%>
 </section>
