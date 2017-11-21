@@ -5,8 +5,10 @@ class PagesController < ApplicationController
     end
 
     def about
+        @about = Page.where(Name: 'About').take
     end
 
     def contact
+        @contact = Page.where(Name: 'Contact').take
     end
 end

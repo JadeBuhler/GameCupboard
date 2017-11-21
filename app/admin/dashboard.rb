@@ -9,27 +9,5 @@ ActiveAdmin.register_page "Dashboard" do
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
-
-    columns do
-      column do
-        panel "About Us" do
-            form title: "About Us", action: '/pages/about.html.erb', method: :post do |f|
-               f.input :content, type: :text, name: 'content'
-               f.input :submit, type: :submit
-             end
-          end
-        end
-      end
-
-      columns do
-        column do
-          panel "Contact Us" do
-            form title: "Contact Us", method: :post do |f|
-               f.input :content, type: :text, name: 'content'
-               f.input :submit, type: :submit
-             end
-          end
-        end
-      end
-    end
+  end
 end
