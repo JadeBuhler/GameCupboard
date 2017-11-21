@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/products/:id', to: 'board_games#show', as: 'product', id: /\d+/
   get '/products/new', to: 'board_games#new_game', as: 'new_product'
   get 'search_results', to: 'board_games#search_results', as: 'search_results'
+  get 'filter_results', to: 'board_games#filter_results', as: 'filter_results'
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
 

@@ -16,7 +16,13 @@
             <option value="New">On Sale</option>
         </select>
     </div>
-    
+
+    <%= form_tag filter_results_path, method: :get do %>
+        <!-- <%= select_tag :filter_by, options_from_collection_for_select(Category.all, "id", "name" ) %> -->
+        <%= select_tag :filter_by, options_from_collection_for_select(Category.all, 'name', 'name')%>
+        <%= submit_tag 'Filter'%>
+    <% end %>
+
     <!-- Search functionality-->
     <%= form_tag search_results_path, method: :get do %>
         <%= text_field_tag :search_keywords %>
