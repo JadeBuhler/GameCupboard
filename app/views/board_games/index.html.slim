@@ -1,31 +1,16 @@
-/ <%= render 'partials/header' %>
-/ <section>
-/     <div id="filter">
-/         <h3>Order:</h3>
-/         <select>
-/             <option value="Alphabetically">Alphabetically</option>
-/             <option value="Newest">Newest</option>
-/             <option value="Oldest">Oldest</option>
-/             <option value="Lowest Price">Lowest Price</option>
-/             <option value="Highest Price">Highest Price</option>
-/         </select>
-/         <h3>Filter By:</h3>
-/         <select>
-/             <option value="New">None</option>
-/             <option value="New">New</option>
-/             <option value="New">On Sale</option>
-/         </select>
-/     </div>
-/
-/     <%= render 'partials/categoryFilter' %>
-/     <%= render 'partials/search'%>
-/     <%= render 'partials/boardgames' %>
-/     <%= paginate @games %>
-/ </section>
-
 = render 'partials/header'
 section
     div
-        = render 'partials/categoryFilter'
-        = render 'partials/boardgames'
+        = render 'partials/filterOptions'
+
+        - if params[:search_keywords]
+            h1 Search results for #{params[:search_keywords]}
+
+            - if @games.size.zero?
+                p No Results FoundI
+            - else
+                p #{pluralize(@games.size, 'Board Game')} Found
+                = render 'partials/boardgames'
+        - else
+            = render 'partials/boardgames'
         = paginate @games

@@ -2,8 +2,9 @@ div.game_container
     - @games.each do |game|
         div.board_game
             h1 #{game.name}
-            h2 Category: #{game.category.name}
-            h2 Players: #{game.min_players} - #{game.max_players}
-            h2 Price: #{game.price}
+            /h2 Category: #{game.category.name}
+            /h2 Players: #{game.min_players} - #{game.max_players}
+            /h2 Price: $#{game.price}
+            /h2 Status: #{game.status}
             p #{link_to image_tag(game.image.url(:large)), game.image.url}
             = link_to 'View Details', product_path(game)

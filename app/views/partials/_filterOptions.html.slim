@@ -1,0 +1,15 @@
+div id="filterOptions"
+    = form_tag products_path(:order), method: :get do
+        label for=":order_by" Order by:
+        = select_tag :order, options_for_select([['Default'], ['Alphabetically'], ['Newest'], ['Oldest'], ['Lowest Price'], ['Highest Price']])
+        = submit_tag 'Order'
+
+    = form_tag products_path(:sort), method: :get do
+        label for=":sort" Sorty by:
+        = select_tag :sort, options_for_select([['None'], ['New'], ['On Sale']])
+        = submit_tag 'Sort'
+
+    = form_tag products_path(:filter_by), method: :get do
+        label for=":filter_by" Categories:
+        = select_tag :filter_by, options_from_collection_for_select(Category.all, 'id', 'name'), :include_blank => 'Default'
+        = submit_tag 'Filter'

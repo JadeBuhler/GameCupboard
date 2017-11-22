@@ -109,7 +109,6 @@ body {
 
        input[type=submit] {
          display:inline;
-         background-image:none;
        }
      }
  }
@@ -124,6 +123,7 @@ body {
 
      ul {
          list-style-type:none;
+         width:200px;
      }
 
      li {
@@ -146,20 +146,21 @@ body {
      }
  }
 
+ #filterOptions {
+   width:80%;
+   height:40px;
+   margin: 0 auto;
+   display:flex;
+   justify-content: center;
 
- #filter {
- 	width:95%;
- 	margin-left:4%;
- 	margin-top:.5%;
-
- 	h3 {
- 		display:inline;
- 		font-weight:bold;
- 	}
-
- 	select {
- 		margin-right:1%;
- 	}
+   form {
+     display:inline;
+     margin-top:.5%;
+     margin-right:3%;
+     input[type=submit] {
+       display:inline;
+     }
+   }
  }
 
  .game_container, .expansion_container {
@@ -180,6 +181,10 @@ body {
  		h1, h2, h3 {
       color:$white;
  		}
+
+    h1 {
+      font-size:24px;
+    }
 
  		img {
  			height:175px;
