@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+ /* End of CSS Reset */
+
+/* Variables */
+ $bg-primary: rgb(61, 61, 61);
+ $bg-lighter: rgb(111, 109, 109);
+ $bg-lightest: rgb(173, 173, 173);
+
+ $border-color: rgb(17, 16, 18);
+
+ $white: rgb(255, 255, 255);
+ /* End of Variables */
+
+/* General Styling */
+body {
+  background-color:$bg-primary;
+  color:$white !important;
+}
+/* End of General Styling*/
+
+ header {
+     width:100%;
+     height:100px;
+     background-color:$bg-lightest;
+     border:solid 5px $border-color;
+
+
+     h1 {
+         font-size:40px;
+         font-weight:bold;
+         margin-top:.5%;
+         margin-left:.5%;
+         color:$white;
+         text-shadow:2px 2px 2px #000;
+
+     }
+
+     form {
+       display:inline;
+       float:right;
+       margin-top:-2.5%;
+
+       input[type="text"] {
+         width:60%;
+         border-radius:10%;
+       }
+
+       input[type=submit] {
+         display:inline;
+         background-image:none;
+       }
+     }
+ }
+
+ .main_nav {
+     background-color: $bg-primary;
+     display:flex;
+     justify-content:center;
+     font-size:20px;
+     color:$white;
+     border:solid 2px $border-color;
+
+     ul {
+         list-style-type:none;
+     }
+
+     li {
+         display:inline;
+         margin-right:5%;
+     }
+
+     a {
+         text-decoration: none !important;
+         color:$white;
+
+         &:visited {
+           color:$white;
+         }
+
+         &:hover {
+           background-color:$white;
+           color:rgb(60, 64, 65);
+         }
+     }
+ }
+
+
+ #filter {
+ 	width:95%;
+ 	margin-left:4%;
+ 	margin-top:.5%;
+
+ 	h3 {
+ 		display:inline;
+ 		font-weight:bold;
+ 	}
+
+ 	select {
+ 		margin-right:1%;
+ 	}
+ }
+
+ .game_container, .expansion_container {
+ 	display:flex;
+ 	justify-content: center;
+ 	flex-wrap: wrap;
+ 	width:100%;
+ 	margin-left:1%;
+
+ 	.board_game, .expansion {
+ 		width:20%;
+ 		height:20%;
+ 		text-align:center;
+ 		border: solid 2px rgb(161, 161, 161);
+ 		margin:.5%;
+ 		padding:.5%;
+
+ 		h1, h2, h3 {
+      color:$white;
+ 		}
+
+ 		img {
+ 			height:175px;
+ 			width:175px;
+ 		}
+
+    a {
+      color:$white;
+    }
+ 	}
+ }
+
+ .pagination {
+ 	width:95%;
+ 	display:flex;
+     justify-content:center;
+ 	float:none !important;
+ }
