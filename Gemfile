@@ -69,3 +69,6 @@ gem 'paperclip'
 
 # Pagination. One nation, under code.
 gem 'kaminari'
+
+# Slim markup. Allows for the use of the slim markup language instead of erb.
+gem 'slim-rails'
