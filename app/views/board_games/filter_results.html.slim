@@ -1,0 +1,10 @@
+= render 'partials/header'
+section
+    div id="filter"
+        = render 'partials/categoryFilter'
+        = render 'partials/search'
+
+        - if @games.size.zero?
+            p No Results Found.
+        - else
+            = render 'partials/boardgames'

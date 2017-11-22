@@ -1,0 +1,10 @@
+== render 'partials/header'
+div.board_game
+    h1 #{@game.name}
+    h2 Category: #{@game.category.name}
+    h2 Players: #{@game.min_players} - #{@game.max_players}
+    h2 Price: #{@game.price}
+    h2 Play Time: #{@game.play_time}
+    p = image_tag @game.image
+    p #{@game.description}
+    = link_to "Back", products_path

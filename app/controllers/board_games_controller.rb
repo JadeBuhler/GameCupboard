@@ -12,7 +12,7 @@ class BoardGamesController < ApplicationController
 
     def search_results
         @wildcard_keywords = '%' + params[:search_keywords] + '%'
-        @games = BoardGames.where("name LIKE ?", @wildcard_keywords)
+        @games = BoardGame.where("name LIKE ?", @wildcard_keywords)
     end
 
     def filter_results

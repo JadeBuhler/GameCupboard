@@ -1,0 +1,14 @@
+= render 'partials/header'
+h1 Out newest games:
+div.game_container
+    - @bgames.each do |game|
+        div.board_game
+            h1 #{game.name}
+            p #{image_tag game.image}
+            = link_to "View Details", product_path(game)
+div.expansion_container
+    h1 Our newest expansions:
+    - @expansions.each do |exp|
+        div.expansions
+            h1 #{exp.name}
+            p #{image_tag exp.image}

@@ -1,0 +1,13 @@
+= render 'partials/header'
+section
+    div id="filter"
+        = render 'partials/categoryFilter'
+        = render 'partials/search'
+
+        h1 Search results for #{params[:search_keywords]}
+
+        - if @games.size.zero?
+            p No Results Found
+        - else
+            p #{pluralize(@games.size, 'Board Game')} Found
+            = render 'partials/boardgames'
