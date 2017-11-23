@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/products/:sort', to: 'board_games#index', as: 'products/sorted'
   get '/products/:filter_by', to: 'board_games#index', as: 'products/categories'
   get '/products/:search', to: 'board_games#index', as: 'products/search'
-  # get 'filter_results', to: 'board_games#filter_results', as: 'filter_results'
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
 

@@ -71,6 +71,8 @@
  $border-color: rgb(17, 16, 18);
 
  $white: rgb(255, 255, 255);
+ $sale: rgb(255, 0, 0);
+ $new: rgb(0, 255, 25);
  /* End of Variables */
 
 /* General Styling */
@@ -78,8 +80,16 @@ body {
   background-color:$bg-primary;
   color:$white !important;
 }
+
+.pagination {
+ width:95%;
+ display:flex;
+    justify-content:center;
+ float:none !important;
+}
 /* End of General Styling*/
 
+/*Header and Navigation Styling*/
  header {
      width:100%;
      height:100px;
@@ -162,7 +172,9 @@ body {
      }
    }
  }
+ /*End of Header/Navigation styling*/
 
+/*Board game and Expansion styling*/
  .game_container, .expansion_container {
  	display:flex;
  	justify-content: center;
@@ -170,36 +182,62 @@ body {
  	width:100%;
  	margin-left:1%;
 
- 	.board_game, .expansion {
- 		width:20%;
- 		height:20%;
- 		text-align:center;
- 		border: solid 2px rgb(161, 161, 161);
- 		margin:.5%;
- 		padding:.5%;
+  .wrapper {
+    margin:.5%;
 
- 		h1, h2, h3 {
-      color:$white;
- 		}
+    .board_game, .expansion {
+   		width:200px;
+   		height:200px;
+   		text-align:center;
+   		border: solid 2px rgb(161, 161, 161);
+   		margin:.5%;
+      position:relative;
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position: center top;
+      -webkit-filter: opacity(1);
+      filter: opacity(.2);
 
-    h1 {
-      font-size:24px;
-    }
 
- 		img {
- 			height:175px;
- 			width:175px;
- 		}
+   		h1, h2, h3 {
+        color:$white;
+   		}
 
-    a {
-      color:$white;
-    }
- 	}
+      .hide {
+        width:100%;
+        padding:2%;
+        display:none;
+        border:solid thin 2px #000;
+        background-color:$bg-primary;
+        opacity:.8;
+
+        h2 {
+          font-size:20px;
+          text-align:center;
+          text-shadow:3px 3px 3px #000;
+        }
+
+        .new_game {
+          color:$new;
+        }
+
+        .on_sale {
+          color:$sale;
+          text-shadow:1px 1px 1px #000;
+        }
+
+      }
+
+      &:hover {
+        filter: opacity(1);
+      }
+
+      &:hover .hide{
+        display:block;
+        position:absolute;
+        bottom:0;
+      }
+   	}
+  }
  }
-
- .pagination {
- 	width:95%;
- 	display:flex;
-     justify-content:center;
- 	float:none !important;
- }
+/*End of Board game and Expansion styling*/
