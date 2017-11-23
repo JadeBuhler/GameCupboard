@@ -2,13 +2,12 @@ div.game_container
     - @games.each do |game|
         = link_to product_path(game), class: "wrapper" do
             div.board_game style="background-image:url('#{game.image}')"
-                //= link_to image_tag(game.image), product_path(game)
-                /h1 #{game.name}
-                /h2 Category: #{game.category.name}
-                /h2 Players: #{game.min_players} - #{game.max_players}
+                - if game.status == "New"
+                    div.new_game_indicator
+                        h3 New Game!
+                -elsif game.status == "On Sale"
+                    div.on_sale_indicator
+                        h3 On Sale!
                 div.hide
+                    h2 #{game.name}
                     h2 $#{game.price}
-                    - if game.status == "New"
-                        h2.new_game #{game.status}!
-                    - elsif game.status == "On Sale"
-                        h2.on_sale #{game.status}!

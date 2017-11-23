@@ -1,13 +1,22 @@
 = render 'partials/header'
-h1 Out newest games:
-div.game_container
-    - @bgames.each do |game|
-        = link_to product_path(game), class:"wrapper" do
-            div.board_game style="background-image:url('#{game.image}')"
-                h1 #{game.name}
-div.expansion_container
+article id="welcome"
+    h1 Welcome to GameCupboard
+    p Welcome to GameCupboard, the best place to buy board games! We offer a robust selection of board games in many different categories. Not only that but we also offer expansions for many different games. Our GameCupboard gauruntee ensures that all purchases are delivered quickly and in tact with all game pieces present and accounted for so you never have to worry about missing pieces.
+    h1 Our newest games:
+    div.game_container
+        - @bgames.each do |game|
+            = link_to product_path(game), class:"wrapper" do
+                div.board_game style="background-image:url('#{game.image}')"
+                    div.hide
+                        h2 #{game.name}
+                        h2 $#{game.price}
     h1 Our newest expansions:
-    - @expansions.each do |exp|
-        div.expansions style="background-image:url('#{exp.image}')"
-            h1 #{exp.name}
-            p #{image_tag exp.image}
+    div.expansion_container
+        - @expansions.each do |exp|
+            //TODO Change this product path to expansion path.
+            = link_to product_path(exp), class:"wrapper" do
+                div.expansion style="background-image:url('#{exp.image}')"
+                    div.hide
+                        h2 #{exp.name}
+                        h2 $#{exp.price}
+= render 'partials/footer'
