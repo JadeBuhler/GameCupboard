@@ -1,44 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# AdminUser.create!(email: 'buhler.jb.jb@gmail.com', password: 'adoeadeerafemaledeer', password_confirmation: 'adoeadeerafemaledeer') if Rails.env.development?
+Expansion.create!(name: 'Catan: Cities & Knights', price: 62.99 , description: "Adds several new aspects to Settlers of Catan but the two major ones are creating knights to protect the land from invading barbarians and building city improvements that confer benefits upon that city's owner. Adds tactical complexity to the game and game length.", status: 'None', stock_quantity: 5)
 
-# BoardGame.create!(name: 'Agricola', min_players: 1, max_players: 5, play_time: '30 - 150 Minutes', price: 97.95, description: 'In Agricola, you are a farmer in a wooden shack with your spouse and little else. On a turn, you get to take only two actions, one for you and one for the spouse, from all the possibilities you will find on a farm: collecting clay, wood, or stone; building fences; and so on. You might think about having kids in order to get more work accomplished, but first you need to expand your house. And what are you going to feed all the little rugrats?', status: 'None', stock_quantity: 10)
-#
-# BoardGame.create!(name: 'Pandemic', min_players: 2, max_players: 4, play_time: '45 Minutes', price: 49.99, description: 'In Pandemic, several virulent diseases have broken out simultaneously all over the world! The players are disease-fighting specialists whose mission is to treat disease hotspots while researching cures for each of four plagues before they get out of hand.', status: 'On Sale', stock_quantity: 10)
-#
-# BoardGame.create!(name: 'Arkham Horror', min_players: 1, max_players: 8, play_time: '120 - 360 Minutes', price: 79.99, description: 'The year is 1926, and it is the height of the Roaring Twenties. Flappers dance till dawn in smoke-filled speakeasies drinking alcohol supplied by rum runners and the mob. It is a celebration to end all celebrations in the aftermath of the war to end all wars.', status: 'New', stock_quantity: 2)
-#
-# BoardGame.create!(name: 'Power Grid', min_players: 2, max_players: 6, play_time: '120 Minutes', price: 47.99, description: 'Power Grid is the updated release of the Friedemann Friese crayon game Funkenschlag. It removes the crayon aspect from network building in the original edition, while retaining the fluctuating commodities market like Crude: The Oil Game and an auction round intensity reminiscent of The Princes of Florence.', status: 'None', stock_quantity: 8)
-#
-# BoardGame.create!(name: 'Axis & Allies', min_players: 2, max_players: 5, play_time: '180 Minutes', price: 64.99, description: "Axis and Allies is the most successful of Milton Bradley's Gamemaster series.", status: "None", stock_quantity: 6)
-#
-# BoardGame.create!(name: 'Small World', min_players: 2 , max_players: 5, play_time: '40 - 80 Minutes', price: 59.99, description: 'In Small World, players vie for conquest and control of a world that is simply too small to accommodate them all.', status: 'On Sale', stock_quantity: 10)
-#
-# BoardGame.create!(name: 'Twilight Imperium (Third Edition)', min_players: 3, max_players: 6, play_time: '180 - 240 Minutes', price: 64.99, description: 'Twilight Imperium Third Edition is an epic empire-building game of interstellar conflict, trade, and struggle for power. Players take the roles of ancient galactic civilizations, each seeking to seize the imperial throne via warfare, diplomacy, and technological progression. With geomorphic board tiles, exquisite plastic miniatures, hundreds of cards, and introducing a rich set of strategic dimensions that allows each player to refocus their game-plan, the original designer Christian T. Petersen has seamlessly incorporated the better qualities of other recently popular games to improve on the game-play of the original TI, making it at once perfectly well-rounded and pleasantly familiar to experienced gamers.', status: 'None', stock_quantity: 9)
-#
-# BoardGame.create!(name: 'Scythe', min_players: 1, max_players: 5, play_time: '90 - 115 Minutes', price: 91.95, description: 'It is a time of unrest in 1920s Europa. The ashes from the first great war still darken the snow. The capitalistic city-state known simply as “The Factory”, which fueled the war with heavily armored mechs, has closed its doors, drawing the attention of several nearby countries.', status: 'On Sale', stock_quantity: 5)
-#
-# BoardGame.create!(name: 'Terra Mystica', min_players: 2, max_players: 5, play_time: '60 - 150 Minutes', price: 99.99, description: 'In the land of Terra Mystica dwell 14 different peoples in seven landscapes, and each group is bound to its own home environment, so to develop and grow, they must terraform neighboring landscapes into their home environments in competition with the other groups.', status: 'None', stock_quantity: 3)
-#
-# BoardGame.create!(name: 'Blood Rage', min_players: 2, max_players: 4, play_time: '60 - 90 Minutes', price: 76.95, description: 'Life is Battle; Battle is Glory; Glory is ALL', status: 'New', stock_quantity: 18)
-#
-# BoardGame.create!(name: 'Lords of Waterdeep', min_players: 2, max_players: 5, play_time: '60 - 120 Minutes', price: '49.99', description: 'Waterdeep, the City of Splendors – the most resplendent jewel in the Forgotten Realms, and a den of political intrigue and shady back-alley dealings. In this game, the players are powerful lords vying for control of this great city. Its treasures and resources are ripe for the taking, and that which cannot be gained through trickery and negotiation must be taken by force!', status: 'None', stock_quantity: 5)
+Expansion.create!(name: 'Catan: 5-6 Player Expansion', price: 31.99 , description: "Allows you to add up to two more opponents to The Settlers of Catan. The only change in the rules is that there is a building round at the end of each turn in which any player can build.", status: 'New', stock_quantity: 5)
 
-Province.create!(name: 'Alberta', gst: 0.05 , pst: 0, hst: 0 )
-Province.create!(name: 'British Columbia', gst: 0.05 , pst: 0.07, hst: 0 )
-Province.create!(name: 'Manitoba', gst: 0.05 , pst: 0.08, hst: 0 )
-Province.create!(name: 'New Brunswick', gst: 0 , pst: 0, hst: 0.15 )
-Province.create!(name: 'Newfoundland and Labrador', gst: 0 , pst: 0, hst: 0 )
-Province.create!(name: 'Northwest Territories', gst: 0.05 , pst: 0, hst: 0.15 )
-Province.create!(name: 'Nova Scotia', gst: 0 , pst: 0, hst: 0.15 )
-Province.create!(name: 'Nunavut', gst: 0.05 , pst: 0, hst: 0 )
-Province.create!(name: 'Ontario', gst: 0 , pst: 0, hst: 0.13 )
-Province.create!(name: 'Prince Edward Island', gst: 0 , pst: 0, hst: 0.15 )
-Province.create!(name: 'Quebec', gst: 0 , pst: 0, hst: 0.14975 )
-Province.create!(name: 'Saskatchewan', gst: 0.05 , pst: 0.05, hst: 0 )
-Province.create!(name: 'Yukon', gst: 0.05 , pst: 0, hst: 0 )
+Expansion.create!(name: 'Catan: Traders & Barbarians', price: 47.99 , description: "Traders & Barbarians is distributed as the third major expansion for The Settlers of Catan, although it is actually a compilation of small expansions and variants. (It is independent of the Seafarers and Cities & Knights expansions, but can be combined with them.)", status: 'None', stock_quantity: 2)
+
+Expansion.create!(name: 'Catan: Explorers & Pirates', price: 62.99 , description: "Catan: Explorers & Pirates is the fourth major expansion for The Settlers of Catan (following Seafarers, Cities & Knights and Traders & Barbarians) and it includes five scenarios and three missions; some of the scenarios make use of the missions while others do not.
+
+Catan: Explorers & Pirates differs from the Catan base game in three main ways. First, instead of having only a single island in the game on which players build and compete for resources, three islands are present – but the landscape of only one of these islands is known at the start of the game. Players start on this island, then build ships and bring settlers into play so that they can then travel to new lands. When a ship ends its movement on unexplored territory, that hex is revealed and a randomly-drawn number chip placed on it, with the player earning one resource as a reward – assuming the hex produces resources, that is. (The number of unknown tiles varies from 16 to 32, depending on the scenario.) A settler and ship can be transformed into a port settlement, from which roads and new ships can be built to enable further exploration.", status: 'None', stock_quantity: 9)
+
+Expansion.create!(name: 'Pandemic: On the Brink', price: 49.99 , description: "Pandemic: On the Brink includes new event cards, new role cards, rules for five players, and optional game challenges to increase the difficulty of the Pandemic base game. These new challenges, which can be used individually or combined for even more difficult play, are as follows:
+
+The Virulent Strain challenge makes one disease become particularly deadly in unpredictable ways.
+The Mutation challenge adds a fifth (purple) disease that behaves differently than the original four.
+The Bio-Terrorist challenge pits one player against the others!", status: 'None', stock_quantity: 13)
+
+Expansion.create!(name: 'Pandemic: In the Lab', price: 39.99 , description: "In Pandemic: In the Lab, the second expansion for Pandemic, you will use a new game board that allows you to move the pawns in a laboratory. The goal of this activity is the same as in the base game – finding cures for diseases – but this time in a new way. Behind sealed bio-hazard doors, scientists race against time to sequence diseases, take samples, and test cures.
+
+Pandemic: In the Lab includes four new roles, new Virulent Strain events, and a Worldwide Panic Mutation scenario. Players can compete individually or on rival teams (when playing with four or six players). Can your team work together in the lab to save humanity?
+
+Pandemic: In the Lab requires both the base game and Pandemic: On the Brink to play.", status: 'New', stock_quantity: 7)
+
+Expansion.create!(name: 'Pandemic: The Cure', price: 49.99 , description: "Pandemic: The Cure, a dice-based version of the popular Pandemic board game, sets up in less than a minute and plays in 30 minutes. As in the board game, four diseases threaten the world and it's up to your team to save humanity. You and your team must keep the world's hotspots in check before they break out of control, while researching cures to the four plagues.
+
+Players roll dice each turn to determine the actions available to them. They can fly and sail between the six major population centers of the world, treat disease in their current region, collect samples for further study, and exchange knowledge to help them in their goal of discovering cures. Each player takes on a different role that has its own unique set of dice and abilities — and players must take advantage of their specializations if they are to have any hope of winning the game. The Dispatcher, for example, can spend dice to fly others around the board, while the Medic is particularly adept at treating disease. Players can roll their dice as often as they like, but the more times they re-roll for the perfect turn, the more likely the next epidemic will occur.
+
+At the end of each turn, new 'infection dice' are rolled to determine the type and location of newly infected populations. If any region on the board is infected with more than three dice of a given color, an outbreak occurs, spreading disease into an adjacent region. If too many outbreaks take place, too many people get infected, or the rate of infection gets too high, all the players lose. If, however, the players can discover the cures to the four diseases, they all win and humanity is saved!", status: 'None', stock_quantity: 4)

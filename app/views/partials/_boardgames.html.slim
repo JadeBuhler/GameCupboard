@@ -1,7 +1,7 @@
 div.game_container
     - @games.each do |game|
-        div.addTo
-            h3 add to cart
+        / div.addTo
+        /     h3 add to cart
         = link_to product_path(game), class: "wrapper" do
             div.board_game style="background-image:url('#{game.image}')"
                 - if game.status == "New"

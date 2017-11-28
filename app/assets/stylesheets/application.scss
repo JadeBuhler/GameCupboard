@@ -291,4 +291,18 @@ body {
     margin-top:50px;
   }
  }
+
+.single_product {
+  width:80%;
+  margin:0 auto;
+  text-align:center;
+
+  h1, h2, p {
+    color:$white;
+  }
+
+  h1 {
+    font-size:30px;
+  }
+}
 /*End of Board game and Expansion styling*/
