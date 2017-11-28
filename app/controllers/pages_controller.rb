@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+    before_action :authenticate_user!
     def index
         @bgames = BoardGame.last(5)
         @expansions = Expansion.last(5)
