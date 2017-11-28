@@ -1,4 +1,5 @@
 class BoardGamesController < ApplicationController
+    before_action :authenticate_user!
     def index
         if params[:search_keywords]
             @wildcard_keywords = '%' + params[:search_keywords] + '%'

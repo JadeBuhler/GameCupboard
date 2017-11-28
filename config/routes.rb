@@ -13,6 +13,4 @@ Rails.application.routes.draw do
   get '/products/:search', to: 'board_games#index', as: 'products/search'
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
-
-
 end
