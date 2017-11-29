@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   get '/products/:search', to: 'board_games#index', as: 'products/search'
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
+  get '/cart', to: 'pages#cart', as: 'cart'
+  post '/cart/:id', to: 'pages#add_to_cart', as: 'add_to_cart', id: /\d+/
+  post '/cart/:id', to: 'pages#remove_from_cart', as: 'remove_from_cart', id: /\d+/
 end

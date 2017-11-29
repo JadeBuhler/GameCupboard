@@ -1,0 +1,10 @@
+= render 'partials/header'
+
+h1 Shopping Cart
+
+p #{@test}
+- @cart_games.each do |game|
+    p #{game.name}
+    p = link_to "Remove From Cart", remove_from_cart_path(game.id), method: :post
+
+= render 'partials/footer'

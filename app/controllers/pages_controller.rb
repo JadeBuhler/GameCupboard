@@ -12,4 +12,18 @@ class PagesController < ApplicationController
     def contact
         @contact = Page.where(Name: 'Contact').take
     end
+
+    def cart
+        @cart_games = BoardGame.find(session[:cart_items])
+    end
+
+    def add_to_cart
+        (session[:cart_items] ||= []) << params[:id] unless session.include?(:id)
+        redirect_back fallback_location: product_path
+    end
+
+    def remove_from_cart
+        session[:cart_items].delete(params[:id])
+        redirect_back fallback_location: cart_path
+    end
 end

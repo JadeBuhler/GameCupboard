@@ -1,5 +1,8 @@
 header
     h1 Game Cupboard
+    = link_to cart_path, class: "cart_link" do
+        p Shopping Cart
+        = image_tag("cart.png")
     = render 'partials/search'
     p class="navbar-text pull-right"
     - if user_signed_in?
