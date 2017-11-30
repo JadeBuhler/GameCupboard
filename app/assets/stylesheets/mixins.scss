@@ -1,0 +1,26 @@
+@mixin header_style($font_size) {
+    font-size:$font_size;
+    font-weight:bold;
+    color:$white;
+    text-shadow:3px 3px 3px rgb(10, 10, 10);
+}
+
+@mixin links ($font_size) {
+    font-size:$font_size;
+    text-decoration: none !important;
+    color:$white;
+    text-shadow:2px 2px 5px rgb(24, 24, 24);
+}
+
+
+@mixin opacity($opacity) {
+    -webkit-filter: opacity($opacity);
+    filter: opacity($opacity);
+    filter: alpha(opacity=$opacity)
+}
+
+@mixin rotate($rotate) {
+    -ms-transform: rotate($rotate); /* IE 9 */
+    -webkit-transform: rotate($rotate); /* Chrome, Safari, Opera */
+    transform: rotate($rotate);
+}

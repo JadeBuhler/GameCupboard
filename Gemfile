@@ -72,3 +72,7 @@ gem 'kaminari'
 
 # Slim markup. Allows for the use of the slim markup language instead of erb.
 gem 'slim-rails'
+
+gem 'flamegraph'
+gem 'stackprof'
+gem 'rack-mini-profiler'

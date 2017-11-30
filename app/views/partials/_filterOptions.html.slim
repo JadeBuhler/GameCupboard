@@ -8,8 +8,3 @@ div id="filterOptions"
         label Sorty by:
         = select_tag :sort, options_for_select([['None'], ['New'], ['On Sale']])
         = submit_tag 'Sort'
-
-    = form_tag products_path(:filter_by), method: :get do
-        label Categories:
-        = select_tag :filter_by, options_from_collection_for_select(Category.all, 'id', 'name'), :include_blank => 'Default'
-        = submit_tag 'Filter'

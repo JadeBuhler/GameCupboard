@@ -19,6 +19,7 @@ class PagesController < ApplicationController
 
     def add_to_cart
         (session[:cart_items] ||= []) << params[:id] unless session.include?(:id)
+        flash[:notice] = "Added to cart"
         redirect_back fallback_location: product_path
     end
 
