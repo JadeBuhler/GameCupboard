@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact', as: 'contact'
   get '/cart', to: 'pages#cart', as: 'cart'
   post '/cart/:id', to: 'pages#add_to_cart', as: 'add_to_cart', id: /\d+/
-  post '/cart/:id', to: 'pages#remove_from_cart', as: 'remove_from_cart', id: /\d+/
+  post '/cart/delete/:id', to: 'pages#remove_from_cart', as: 'remove_from_cart', id: /\d+/
   get '/checkout', to: 'pages#checkout', as: 'checkout'
   post 'checkout_order', to: 'pages#checkout_order', as: 'checkout_order'
 end

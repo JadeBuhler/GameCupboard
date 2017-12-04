@@ -77,5 +77,6 @@ gem 'slim-rails'
 gem 'flamegraph'
 gem 'stackprof'
 gem 'rack-mini-profiler'
+
 gem 'jquery-turbolinks'
 gem 'jquery-rails'

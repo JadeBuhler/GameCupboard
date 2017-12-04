@@ -13,3 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( general.css )
+
+Rails.application.config.assets.precompile += %w( multi-step-form.js )
+Rails.application.config.assets.precompile += %w( multi-step-easing1.js )
+Rails.application.config.assets.precompile += %w( multi-step-easing2.js )

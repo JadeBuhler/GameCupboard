@@ -12,12 +12,14 @@ section.cart
                         h2 #{game.name}
                         h3 Players: #{game.min_players} - #{game.max_players}
                         h3 Play Time: #{game.play_time}
-                        h3 Quantity: 1
+                        label Quantity:
+                            #{number_field_tag 'quantity', '1', in: 1...game.stock_quantity+1, :class => 'item_quantity'}
+
                         hr
                         div.cart_item_bottom
                             h3 Price: ...............................................................................#{number_to_currency(game.price)}
-                            p = link_to "Remove From Cart", remove_from_cart_path(game), method: :post
-        = form_tag checkout_path, method: :post do
+                            p = link_to "remove from cart", remove_from_cart_path(game), method: :post
+        = form_tag checkout_path, method: :get do
             = submit_tag 'Checkout'
     -else
         p You have no items in your cart.

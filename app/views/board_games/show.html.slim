@@ -4,7 +4,7 @@ div.single_product
     p = image_tag @game.image(:large)
     h2 Category: #{@game.category.name}
     h2 Players: #{@game.min_players} - #{@game.max_players}
-    h2 Price: #{@game.price}
+    h2 Price: #{number_to_currency(@game.price)}
     h2 Play Time: #{@game.play_time}
     p #{@game.description}
     = link_to "Back To Products", products_path

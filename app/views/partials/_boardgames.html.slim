@@ -11,4 +11,4 @@ div.game_container
                 div.board_game style="background-image:url('#{game.image}')"
                     div.hide
                         h2 #{game.name}
-                        h2 $#{game.price}
+                        h2 #{number_to_currency(game.price)}

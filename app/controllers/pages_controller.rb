@@ -26,7 +26,8 @@ class PagesController < ApplicationController
     end
 
     def remove_from_cart
-        session[:cart_items] ||= [].delete :params[:id]
+        session[:cart_items].delete(params[:id])
+        flash[:notice] = "Removed from cart"
         redirect_back fallback_location: cart_path
     end
 
