@@ -85,10 +85,22 @@ body {
  float:none !important;
 }
 
+section {
+
+  h1 {
+    @include header_style(40px);
+    text-align:center;
+  }
+}
+
 .alert.alert-success {
   position:absolute;
   top:50%;
   left:45%;
+}
+
+.profiler-button.profiler-totals {
+  display:hidden !important;
 }
 /* End of General Styling*/
 
@@ -133,7 +145,7 @@ body {
      }
 
      .cart_link:hover {
-       color:$sale;
+       color:$hover-color;
      }
 
      .username_message {
@@ -190,24 +202,6 @@ body {
          }
      }
  }
-
- #filterOptions {
-   width:80%;
-   height:40px;
-   margin: 0 auto;
-   display:flex;
-   justify-content: center;
-
-   form {
-     display:inline;
-     margin-top:.5%;
-     margin-right:3%;
-
-     input[type=submit] {
-       display:inline;
-     }
-   }
- }
  /*End of Header/Navigation styling*/
 
  /*Footer styling*/
@@ -215,9 +209,58 @@ body {
      width:100%;
      height:200px;
      background-color:black;
+     text-align:center;
+
+     h1 {
+       @include header_style(24px);
+       padding-top:2%;
+       padding-bottom:2%;
+     }
+
+     .footer_nav {
+         height:40px;
+         display:flex;
+         justify-content:center;
+         font-size:14px;
+         color:$white;
+
+         ul {
+           width:50em;
+           list-style-type:none;
+           margin:0 auto;
+           text-align: center;
+         }
+
+         li {
+             display:inline;
+             margin-right:1%;
+         }
+
+         li:after {
+           content:" |";
+           padding-left:.5%;
+         }
+
+         li:last-of-type:after {
+           content:"";
+         }
+
+         a {
+             @include links(14px);
+
+             &:visited {
+               color:$white;
+             }
+
+             &:hover {
+               color:$hover-color;
+             }
+         }
+     }
    }
  /*End of Footer styling*/
 
+/*Home Page styling*/
  #welcome {
    width:90%;
    margin:0 auto;
@@ -228,39 +271,73 @@ body {
      text-align:center;
      padding:2%;
    }
+
+   .game_container, .expansion_container {
+     margin-left:5%;
+   }
  }
+ /*End of Home Page styling*/
+
+/* Products Page styling*/
+.shopping_area {
+  display:flex;
+  justify-content:flex-start;
+
+  aside {
+    @include opacity(.8);
+    width:200px;
+    background-color: $bg-lighter;
+    margin-left:1%;
+    padding:.5%;
+    border: solid 2px rgb(161, 161, 161);
+
+    form {
+      margin-left:10%;
+
+      .lblHeading {
+        font-size:25px;
+        display:block;
+        padding-top:10%;
+        padding-bottom:.5%;
+      }
+
+      .lblOption {
+        display:block;
+
+      }
+    }
+  }
+}
+/*End of Products Page styling*/
 
 /*Board game and Expansion styling*/
  .game_container, .expansion_container {
  	display:flex;
  	justify-content: center;
  	flex-wrap: wrap;
- 	width:100%;
- 	margin-left:1%;
+ 	width:90%;
 
   .wrapper {
     margin:.5%;
 
-    .board_game, .expansion {
-      @include opacity(.2);
-   		width:200px;
+    h1, h2, h3 {
+      color:$white;
+    }
+
+    .opacity_wrapper {
+      @include opacity(1);
+      width:200px;
    		height:200px;
    		text-align:center;
    		border: solid 2px rgb(161, 161, 161);
    		margin:.5%;
       position:relative;
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-position: center top;
       overflow:hidden;
 
-   		h1, h2, h3 {
-        color:$white;
-   		}
-
       .new_game_indicator {
-        @include opacity(1);
+        @include opacity(.7);
         @include rotate(40deg);
+        z-index:1;
         width:110px;
         height:20px;
         background-color:$new;
@@ -270,16 +347,17 @@ body {
       }
 
       .on_sale_indicator {
-        @include opacity(1);
-        @include rotate(40deg);
-        width:110px;
-        height:20px;
+        @extend .new_game_indicator;
         background-color:$sale;
-        position:absolute;
-        top:20px;
-        left:110px;
       }
+    }
 
+    .board_game, .expansion {
+      @extend .opacity_wrapper;
+      @include opacity(.2);
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position: center top;
 
       .hide {
         width:100%;
@@ -308,11 +386,6 @@ body {
       }
    	}
   }
-
-  .addTo {
-    position:relative;
-    margin-top:50px;
-  }
  }
 
 .single_product {
@@ -329,3 +402,87 @@ body {
   }
 }
 /*End of Board game and Expansion styling*/
+
+/*Contact Page styling*/
+
+.contact_form {
+
+  width:70%;
+  margin:0 auto;
+  border:solid 2px $bg-lightest;
+
+  label {
+    @include header_style(24px);
+    display:block;
+    padding-top:1%;
+
+    input {
+      width:20%;
+      padding-bottom:1%;
+    }
+
+    input[type=submit] {
+      display:block;
+    }
+
+    input[type="textarea"] {
+      display:block;
+    }
+
+  }
+}
+/*End of Contact Page styling*/
+
+/*Cart Page styling*/
+.cart {
+  width:90%;
+  margin:0 auto;
+
+  form {
+    text-align:center;
+  }
+
+  h1 {
+    padding-bottom:2%;
+  }
+
+  .cart_item {
+    width:60%;
+    display:flex;
+    justify-content: flex-start;
+    margin:0 auto;
+    padding:1%;
+    border: solid 2px $bg-lighter;
+
+    .inner_cart_item {
+      padding-left:2%;
+
+      h2 {
+        @include header_style(24px);
+        text-decoration:underline;
+        padding-bottom:2%;
+      }
+
+      h3 {
+        @include header_style(20px);
+      }
+
+        .cart_item_top {
+          padding-top:1%;
+          line-height:2em;
+
+          hr {
+            width:500px;
+          }
+        }
+
+        .cart_item_bottom {
+
+          a {
+            @include links(18px);
+          }
+        }
+    }
+  }
+}
+/*End of Cart Page styling*/

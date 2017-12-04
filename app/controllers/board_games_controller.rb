@@ -8,27 +8,27 @@ class BoardGamesController < ApplicationController
             if @filtered_category == ""
                 redirect_to products_path
             else
-                @games = BoardGame.where("category_id = ?",             @filtered_category).page(params[:page]).per(24)
+                @games = BoardGame.where("category_id = ?",             @filtered_category).page(params[:page]).per(30)
             end
         elsif params[:filter_by] == "" && params[:search_keywords]
             @wildcard_keywords = '%' + params[:search_keywords] + '%'
-            @games = BoardGame.where("name LIKE ?", @wildcard_keywords).page(params[:page]).per(24)
+            @games = BoardGame.where("name LIKE ?", @wildcard_keywords).page(params[:page]).per(30)
         elsif params[:filter_by] && params[:search_keywords]
             @wildcard_keywords = '%' + params[:search_keywords] + '%'
-            @games = BoardGame.where("category_id =?", @filtered_category).where("name LIKE ?", @wildcard_keywords).page(params[:page]).per(24)
+            @games = BoardGame.where("category_id =?", @filtered_category).where("name LIKE ?", @wildcard_keywords).page(params[:page]).per(30)
         elsif params[:sort]
-            @games = BoardGame.where("status LIKE ?", @sort_keyword).page(params[:page]).per(24)
+            @games = BoardGame.where("status LIKE ?", @sort_keyword).page(params[:page]).per(30)
         elsif params[:order]
             if params[:order] = "Alphabetically"
-                @games = BoardGame.order("name ASC").page(params[:page]).per(24)
+                @games = BoardGame.order("name ASC").page(params[:page]).per(30)
             elsif params[:order] = "Newest"
-                @games = Boardgame.order('created_at ASC').page(params[:page]).per(24)
+                @games = Boardgame.order('created_at ASC').page(params[:page]).per(30)
             elsif params[:order] = "Oldest"
-                @games = Boardgame.order('created_at DESC').page(params[:page]).per(24)
+                @games = Boardgame.order('created_at DESC').page(params[:page]).per(30)
             elsif params[:order] = "Lowest Price"
-                @games = Boardgame.order('price DESC').page(params[:page]).per(24)
+                @games = Boardgame.order('price DESC').page(params[:page]).per(30)
             elsif params[:order] = "Highest Price"
-                @games = Boardgame.order('price ASC').page(params[:page]).per(24)
+                @games = Boardgame.order('price ASC').page(params[:page]).per(30)
             end
         else
         @games = BoardGame.all.page(params[:page]).per(24)

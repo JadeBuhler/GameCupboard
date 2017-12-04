@@ -8,5 +8,6 @@ div.single_product
     h2 Play Time: #{@game.play_time}
     p #{@game.description}
     = link_to "Back To Products", products_path
-    p = link_to " Add To Cart", add_to_cart_path(@game.id), method: :post
+    = form_tag add_to_cart_path(@game.id), method: :post do
+        = submit_tag 'Add To Cart'
 = render 'partials/footer'

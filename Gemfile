@@ -73,6 +73,9 @@ gem 'kaminari'
 # Slim markup. Allows for the use of the slim markup language instead of erb.
 gem 'slim-rails'
 
+# Faster load times.
 gem 'flamegraph'
 gem 'stackprof'
 gem 'rack-mini-profiler'
+gem 'jquery-turbolinks'
+gem 'jquery-rails'

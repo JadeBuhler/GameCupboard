@@ -1,15 +1,14 @@
 div.game_container
     - @games.each do |game|
-        / div.addTo
-        /     h3 add to cart
         = link_to product_path(game), class: "wrapper" do
-            div.board_game style="background-image:url('#{game.image}')"
+            div.opacity_wrapper
                 - if game.status == "New"
                     div.new_game_indicator
                         h3 New Game!
                 -elsif game.status == "On Sale"
                     div.on_sale_indicator
                         h3 On Sale!
-                div.hide
-                    h2 #{game.name}
-                    h2 $#{game.price}
+                div.board_game style="background-image:url('#{game.image}')"
+                    div.hide
+                        h2 #{game.name}
+                        h2 $#{game.price}

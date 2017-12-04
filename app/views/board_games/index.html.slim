@@ -1,17 +1,22 @@
 = render 'partials/header'
 section
-    div
-        = render 'partials/filterOptions'
-
-        - if params[:search_keywords]
-            h1 Search results for #{params[:search_keywords]}
-
-            - if @games.size.zero?
-                p No Results FoundI
-            - else
-                p #{pluralize(@games.size, 'Board Game')} Found
-                = render 'partials/boardgames'
+    /= render 'partials/filterOptions'
+    - if params[:search_keywords]
+        h1 Search results for #{params[:search_keywords]}
+        - if @games.size.zero?
+            p No Results FoundI
         - else
-            = render 'partials/boardgames'
+            p #{pluralize(@games.size, 'Board Game')} Found
+            div.shopping_area
+                aside
+                    = render 'partials/filterOptions'
+                = render 'partials/boardgames'
         = paginate @games
+    - else
+        h1 Browse our fine selection of boardgames.
+        div.shopping_area
+            aside
+                = render 'partials/filterOptions'
+            = render 'partials/boardgames'
+    = paginate @games
 = render 'partials/footer'

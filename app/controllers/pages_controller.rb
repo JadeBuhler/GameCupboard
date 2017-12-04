@@ -14,7 +14,9 @@ class PagesController < ApplicationController
     end
 
     def cart
-        @cart_games = BoardGame.find(session[:cart_items])
+        if session[:cart_items]
+            @cart_games = BoardGame.find(session[:cart_items])
+        end
     end
 
     def add_to_cart
@@ -24,7 +26,13 @@ class PagesController < ApplicationController
     end
 
     def remove_from_cart
-        session[:cart_items].delete(params[:id])
+        session[:cart_items] ||= [].delete :params[:id]
         redirect_back fallback_location: cart_path
+    end
+
+    def checkout
+    end
+
+    def checkout_order
     end
 end

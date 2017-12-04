@@ -1,10 +1,46 @@
 div id="filterOptions"
-    = form_tag products_path(:order), method: :get do
-        label Order by:
-        = select_tag :order, options_for_select([['Default'], ['Alphabetically'], ['Newest'], ['Oldest'], ['Lowest Price'], ['Highest Price']])
-        = submit_tag 'Order'
+    / = form_tag products_path(:order), method: :get do
+    /     label Order by:
+    /     = select_tag :order, options_for_select([['Default'], ['Alphabetically'], ['Newest'], ['Oldest'], ['Lowest Price'], ['Highest Price']])
+    /     = submit_tag 'Order'
+
+    / = form_tag products_path(:sort), method: :get do
+    /     label Sorty By:
+    /     = select_tag :sort, options_for_select([['None'], ['New'], ['On Sale']])
+    /     = submit_tag 'Sort'
 
     = form_tag products_path(:sort), method: :get do
-        label Sorty by:
-        = select_tag :sort, options_for_select([['None'], ['New'], ['On Sale']])
-        = submit_tag 'Sort'
+
+        fieldset
+            label.lblHeading View:
+            label.lblOption Board Games
+                #{radio_button_tag 'display', 'Board Games', true}
+            label.lblOption Expansions
+                #{radio_button_tag 'display', 'Expansions'}
+
+        fieldset
+            label.lblHeading Sort By:
+            label.lblOption Default
+                #{radio_button_tag 'sort', 'Default', true}
+            label.lblOption New
+                #{radio_button_tag 'sort', 'New'}
+            label.lblOption On Sale
+                #{radio_button_tag 'sort', 'On Sale'}
+
+        fieldset
+            label.lblHeading Order by:
+            label.lblOption Default
+                #{radio_button_tag 'order', 'Default', true}
+            label.lblOption Alphabetically
+                #{radio_button_tag 'order', 'Alphabetically', true}
+            label.lblOption Newest
+                #{radio_button_tag 'order', 'Newest'}
+            label.lblOption Oldest
+                #{radio_button_tag 'order', 'Oldest'}
+            label.lblOption Lowest Price
+                #{radio_button_tag 'order', 'Lowest'}
+            label.lblOption Highest Price
+                #{radio_button_tag 'order', 'Highest'}
+        = submit_tag 'Aplly Filters'
+
+    / = form_tag products_path(:order), method: :get do

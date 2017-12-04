@@ -1,10 +1,25 @@
 = render 'partials/header'
 
-h1 Shopping Cart
+section.cart
+    h1 Shopping Cart
 
-p #{@test}
-- @cart_games.each do |game|
-    p #{game.name}
-    p = link_to "Remove From Cart", remove_from_cart_path(game.id), method: :post
+    - if @cart_games
+        - @cart_games.each do |game|
+            div.cart_item
+                = image_tag (game.image(:med))
+                div.inner_cart_item
+                    div.cart_item_top
+                        h2 #{game.name}
+                        h3 Players: #{game.min_players} - #{game.max_players}
+                        h3 Play Time: #{game.play_time}
+                        h3 Quantity: 1
+                        hr
+                        div.cart_item_bottom
+                            h3 Price: ...............................................................................#{number_to_currency(game.price)}
+                            p = link_to "Remove From Cart", remove_from_cart_path(game), method: :post
+        = form_tag checkout_path, method: :post do
+            = submit_tag 'Checkout'
+    -else
+        p You have no items in your cart.
 
 = render 'partials/footer'
