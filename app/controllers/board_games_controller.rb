@@ -22,13 +22,13 @@ class BoardGamesController < ApplicationController
             if params[:order] = "Alphabetically"
                 @games = BoardGame.order("name ASC").page(params[:page]).per(30)
             elsif params[:order] = "Newest"
-                @games = Boardgame.order('created_at ASC').page(params[:page]).per(30)
+                @games = BoardGame.order('created_at ASC').page(params[:page]).per(30)
             elsif params[:order] = "Oldest"
-                @games = Boardgame.order('created_at DESC').page(params[:page]).per(30)
+                @games = BoardGame.order('created_at DESC').page(params[:page]).per(30)
             elsif params[:order] = "Lowest Price"
-                @games = Boardgame.order('price DESC').page(params[:page]).per(30)
+                @games = BoardGame.order('price DESC').page(params[:page]).per(30)
             elsif params[:order] = "Highest Price"
-                @games = Boardgame.order('price ASC').page(params[:page]).per(30)
+                @games = BoardGame.order('price ASC').page(params[:page]).per(30)
             end
         else
         @games = BoardGame.all.page(params[:page]).per(24)
